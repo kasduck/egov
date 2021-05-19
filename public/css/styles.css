@@ -1,0 +1,323 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+  /* background-image: url('/home/albert/LearnDSA/top.jpg'); */
+  background-color:black;
+  /* height: 9   00px; */
+}
+.navigation{
+  color:white;
+  background-color: rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.navigation a {
+  float: left;
+  color:cadetblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
+.navigation a:hover {
+  color: green;
+}
+.heading{
+  color:orange;
+  margin-top: 200px;
+  margin-left: 13rem;
+  font-size: 80px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid green; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+  typing 2s steps(40,end),
+  blink-caret .75s 0s step-end forwards;
+}
+.sub-heading{
+  margin-top: 20px;
+  margin-left: 37rem;
+  font-size: 60px;
+}
+#DSA{
+  color:green;
+}
+h1{
+  display: inline;
+}
+h4{
+  display: inline;
+  opacity: 0;
+}
+#code{
+  animation: bring-in 1s 1s forwards;
+}
+#develop{
+  animation: bring-in 1s 1.5s forwards;
+}
+#hack{
+  animation: bring-in 1s 2s forwards;
+}
+
+.icon{
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  animation: bounce 1s reverse infinite;
+}
+
+.arrow {
+  width:10px;
+  height:10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  animation: change-color 500ms alternate infinite;
+  cursor: pointer;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+#medium{
+  margin-top: 330px;
+  height:1000px;
+  margin-left: 0;
+  margin-right: 0;
+  background-image: url('medium.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-left:30px;
+  padding-right: 20px;
+  /* filter: blur(8px);
+-webkit-filter: blur(8px); */
+}
+
+.boxes{
+  display: grid;
+  grid-template-columns: 47% 6% 47%;
+  grid-template-rows: 50% 50%;
+}
+.left{
+  box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 5px;
+  background-color: rgb(100,100,100);
+  /* opacity:0.5; */
+  padding-left: 20px;
+  font-size:50px;
+  /* height: 400px; */
+  width: 900px;
+  float: left;
+  margin-top: 100px;
+  color: white;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: darkgray;
+  animation: fold-in-left 1s;
+  overflow:hidden;
+  grid-row-start:1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.right{
+  box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
+  background-color: bisque;
+  /* opacity: 0.5; */
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 40px;
+  /* height:400px; */
+  float: right;
+  width: 800px;
+  margin-top: 100px;
+  color: black;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: brown;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  position: relative;
+  overflow: hidden;
+}
+.marker{
+  background-color: green;
+  position: absolute;
+  top:19px;
+  right:-50px;
+  width:300px;
+  text-align: center;
+  font-size: 30px;
+  transform: rotateZ(20deg);
+}
+.list{
+  list-style: none;
+}
+.list>li:before{
+  content: "\00BB";
+  border-bottom-width: 0;
+}
+.right li{
+  background-color: inherit;
+  width:50%;
+  /* float: left; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  /* padding: 14px 16px; */
+  transition: 0.3s;
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 2px;
+  border-color: black;
+}
+
+/* Change background color of buttons on hover */
+.right li:hover {
+  background-color:brown;
+  padding: 10px;
+}
+footer{
+    bottom:0;
+    background-color: black;
+    color:white;
+    height:100px;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size:30px;
+    color: cadetblue;
+}
+.social{
+  float:right;
+}
+.line{
+    display:inline;
+}
+
+.right-top{
+  box-shadow: rgba(0, 0, 0, 0.75) 10px 10px 5px 0px;
+  grid-row-start: 2;
+  grid-column-start: 3;
+  background-color: #f3f5f7;
+  /* opacity: 0.5; */
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  /* font-size: 40px; */
+  /* height:400px; */
+  float: right;
+  width: 800px;
+  margin-top:50px;
+  margin-bottom: 0;
+  color: black;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #2f343e;
+}
+
+#name,#email{
+  border-style: solid;
+  border-radius: 0.5px;
+  border-color: lightblue;
+  border-width: 1px;
+  width: 400px;
+  height: 25px;
+  text-indent: 10px;
+  font-family: Verdana;
+  font-size: 20px;
+
+}
+#name:focus,#email:focus{
+  text-indent: 15px;
+  
+}
+#msg{
+  border-style: solid;
+  border-radius: 0.5px;
+  border-color: lightblue;
+  border-width: 1px;
+  text-indent: 10px;
+  font-family: Verdana;
+  
+}
+textarea{ 
+  resize: none;
+  border-style: inset;
+  border-radius: 0.5px;
+  border-width: 1px;
+  border-color: lightblue;
+  padding-left: 3px;
+  font-family: Verdana;
+  font-size: 20px;
+}
+button{
+  background-color:royalblue;
+  width: 250px;
+  height: 30px;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: blue;
+  font-size: large;
+  color: whitesmoke;
+}
+textarea:focus{
+  padding-left: 9px;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 800px }
+}
+
+@keyframes fold-in-left {
+  from
+  {
+      width: 0;
+      height:700px;
+  }
+  to
+  {
+      width: 800px;
+      height:700px;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: green; }
+  100%{border-color: black;}
+}
+
+@keyframes bring-in{
+  from{
+      opacity:0
+  }
+  to{
+      opacity:100
+  }
+}
+
+@keyframes change-color{
+  from{
+      color:green;
+      border-color: grey;
+  }
+  to{
+      color:grey;
+      border-color: green;
+  }
+}
+
+@keyframes bounce {
+  0%{transform: translateY(0);} 
+  50%{transform: translateY(-5px);} 
+  100%{transform: translateY(5px);}
+}

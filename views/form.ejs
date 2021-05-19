@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <title>LOGIN</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>LOGIN</h1>
+        <%= typeof msg != 'undefined' ? msg : '' %>
+        <form action="/signin" method="POST" enctype="application/json">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="form-group">
+                <div class="form-group"><label>USERNAME: &nbsp;</label><input type="text" class="form-control-sm"
+                        placeholder="username" name="name" id="name" required><br></div>
+                <div class="form-group"><label>PASSWORD: &nbsp;</label><input type="password" class="form-control-sm"
+                        placeholder="password" name="password" id="password" required><br></div>
+                <button type="submit" class="btn" onclick="change()">Submit</button>
+        </form>
+        <script>
+            change = function () {
+                document.getElementById("image").className = "show";
+            }
+        </script>
+            <h3>Don't have an account?</h3><a href="/index">SignUp</a>
+        <style>
+            .hide {
+                display: none;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>

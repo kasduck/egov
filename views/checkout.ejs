@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="centered">
+        <button id="order-btn" class="btn"></button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+                var stripe = Stripe("pk_live_51Hef4VB9069emHXgSyh770WJom5jH62B4DKM588f1xeHcf5fJ27UJ2Xl4fiCkufpce3JzbfoFbt74ocSnuiUfHYo00FcaU8Dkv");
+                var orderBtn = document.getElementById('order-btn');
+                orderBtn.addEventListener("click", function () {
+      fetch("/create-session", {
+        method: "POST",
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function (result) {
+          // If redirectToCheckout fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using error.message.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function (error) {
+          console.error("Error:", error);
+        });
+    });
+
+        </script>
+    </div>
+</body>
+</html>

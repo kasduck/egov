@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        #messageArea {
+            display: block;
+        }
+    
+        .regform {
+            border-style: solid;
+            border-radius: 45px;
+            background: white;
+            margin-top: 20%;
+            padding: 3%;
+        }
+    
+        /* .container {
+            background: #a64bf4;
+            background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+            background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+            background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            width: 100%;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding-left: 100px;
+            padding-right: 100px;
+        } */
+    
+        .msg {
+            color: beige;
+            font-size: x-large;
+            overflow: hidden;
+            border-right: .15em solid black;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation:
+                typing 3.5s steps(40, end),
+                blink-caret .75s ease-in;
+        }
+    
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+    
+            to {
+                width: 40%
+            }
+        }
+    
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+    
+            from,
+            to {
+                border-color: transparent
+            }
+    
+            50% {
+                border-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2 style="color: black;">IMAGE AUTHENTICATION</h2>
+    </center>
+    <div class="main">
+    <div class="container">
+    <form action="/auth" method="POST" enctype="application/json">
+    <div class="row">
+    <div class="column">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="checkbox" id="file1" name="file1" value="true">
+    <label for="file1"> <img src=./uploads/<%= file1 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file2" name="file2" value="true">
+    <label for="file2"> <img src=./uploads/<%= file2 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file3" name="file3" value="true">
+    <label for="file3"> <img src=./uploads/<%= file3 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file4" name="file4" value="true">
+    <label for="file4"> <img src=./uploads/<%= file4 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file5" name="file5" value="true">
+    <label for="file5"> <img src=./uploads/<%= file5 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file6" name="file6" value="true">
+    <label for="file6"> <img src=./uploads/<%= file6 %> height="100px" width="200px"></label></div>
+    </div><div class="column">
+        <h4 href="" class="typewrite" data-period="2000"
+            data-type='[ "Hello...", "Please select images...","Uploaded by you..."]'
+            style="color:black;">
+
+            <span class="wrap"></span>
+        </h4>
+    </div>
+    <div class="row">
+    <div class="column">
+    <input type="checkbox" id="file7" name="file7" value="true">
+    <label for="file7"> <img src=./uploads/<%= file7 %> height="100px" width="200px"></label>
+    </div><div class="column">
+    <input type="checkbox" id="file8" name="file8" value="true">
+    <label for="file8"> <img src=./uploads/<%= file8 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file9" name="file9" value="true">
+    <label for="file9"> <img src=./uploads/<%= file9 %> height="100px" width="200px"></label>
+        </div><div class="column">
+    <input type="checkbox" id="file10" name="file10" value="true">
+    <label for="file10"> <img src=./uploads/<%= file10 %> height="100px" width="200px"></label></div>
+    </div>
+    <center><input type="submit" value="Submit" class="btn"></center>
+</form>
+</div><div>
+</div>
+</div>
+</body>
+<style>
+    body{
+        background-color:black;
+    }
+    .container{
+        padding-left: 15px;
+        max-width: 800px;
+        margin-left:470px;
+        margin-top: 0px;
+        background-color: aliceblue;
+         border: solid;
+        border-color: black;
+        border-width: 5px;
+        border-radius: 4px;
+    }
+    img{
+        border: solid;
+        border-color: black;
+        border-width: 5px;
+        border-radius: 4px;
+    }
+    .column {
+  float: left;
+  width: 33.33%;
+  padding-top: 4px;
+  padding-bottom:4px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.main{
+    display: inline-block;
+}
+</style>
+<script>
+    var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function () {
+            that.tick();
+        }, delta);
+    };
+
+    window.onload = function () {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</html>

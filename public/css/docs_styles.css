@@ -1,0 +1,28 @@
+html {
+    scroll-behavior: smooth;
+  }
+  body{
+    /* background-image: url('/home/albert/LearnDSA/top.jpg'); */
+    background-color:black;
+    color:white;
+    /* height: 9   00px; */
+  }
+  .wrap{
+    color:white;
+  }
+  .navigation{
+    color:white;
+    background-color: rgba(255,255,255,0.1);
+    overflow: hidden;
+  }
+  .navigation a {
+    float: left;
+    color:cadetblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  .navigation a:hover {
+    color: green;
+  }
